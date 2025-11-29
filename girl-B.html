@@ -1,0 +1,2561 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)file:///C:/Users/wentso/Downloads/girl-A.html -->
+<html lang="zh-Hant"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>串珠表（36欄 / 固定方格 / 自動統計）</title>
+<style>
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang TC","Microsoft JhengHei", sans-serif;
+    margin: 16px;
+  }
+  h2 { margin-bottom: 8px; }
+  table.grid {
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  table.grid th,
+  table.grid td {
+    border: 1px solid #999;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    text-align: center;
+    font-size: 10px;
+  }
+  td.coord-cell { cursor: pointer; user-select: none; }
+  th.coord-header, th.row-header { background:#f0f0f0; position: sticky; }
+  th.coord-header { top:0; z-index:2; }
+  th.row-header { left:0; z-index:1; }
+
+  .color-empty{background:#fff;color:#999;}
+  .color-W{background:#fff;border:1px solid #ccc;}
+  .color-S{background:#f6e2c8;}
+  .color-S2{background:#e3c19a;}
+  .color-H{background:#6b4a2e;color:#fff;}
+  .color-B{background:#000;color:#fff;}
+  .color-O{background:#f9a825;}
+  .color-P{background:#f48fb1;}
+
+  table.counter-table{
+    border-collapse:collapse;
+    margin-top:12px;
+  }
+  table.counter-table th,
+  table.counter-table td{
+    border:1px solid #888;
+    padding:4px 8px;
+    font-size:12px;
+    text-align:center;
+  }
+  .counter-color-swatch{
+    display:inline-block;
+    width:14px;
+    height:14px;
+    border-radius:3px;
+    margin-right:4px;
+    vertical-align:middle;
+  }
+</style>
+<style type="text/css" id="operaUserStyle"></style></head>
+<body>
+<h2>串珠格線（36欄 / 固定方格 / 白色 + 雙膚色 / 自動統計）</h2>
+
+<p>點格子可在：空白 → W → S → S2 → H → B → O → P → 空白 之間切換，下方表格會自動統計每種顏色的珠子數量。</p>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th class="coord-header"></th>
+      <th class="coord-header">A</th>
+      <th class="coord-header">B</th>
+      <th class="coord-header">C</th>
+      <th class="coord-header">D</th>
+      <th class="coord-header">E</th>
+      <th class="coord-header">F</th>
+      <th class="coord-header">G</th>
+      <th class="coord-header">H</th>
+      <th class="coord-header">I</th>
+      <th class="coord-header">J</th>
+      <th class="coord-header">K</th>
+      <th class="coord-header">L</th>
+      <th class="coord-header">M</th>
+      <th class="coord-header">N</th>
+      <th class="coord-header">O</th>
+      <th class="coord-header">P</th>
+      <th class="coord-header">Q</th>
+      <th class="coord-header">R</th>
+      <th class="coord-header">S</th>
+      <th class="coord-header">T</th>
+      <th class="coord-header">U</th>
+      <th class="coord-header">V</th>
+      <th class="coord-header">W</th>
+      <th class="coord-header">X</th>
+      <th class="coord-header">Y</th>
+      <th class="coord-header">Z</th>
+      <th class="coord-header">AA</th>
+      <th class="coord-header">AB</th>
+      <th class="coord-header">AC</th>
+      <th class="coord-header">AD</th>
+      <th class="coord-header">AE</th>
+      <th class="coord-header">AF</th>
+      <th class="coord-header">AG</th>
+      <th class="coord-header">AH</th>
+      <th class="coord-header">AI</th>
+      <th class="coord-header">AJ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th class="row-header">1</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="F1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="G1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="H1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="I1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="J1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="K1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="L1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="M1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="N1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="O1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="P1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Q1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="R1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="S1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="T1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="U1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="V1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="W1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="X1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE1">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF1">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG1"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH1"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI1"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ1"></td>
+    </tr>
+    <tr>
+      <th class="row-header">2</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="F2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="G2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="H2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="I2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="J2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="K2">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L2">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M2">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N2">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O2">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P2">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q2">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="R2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="S2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="T2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="U2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="V2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="W2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="X2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE2">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF2">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG2"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH2"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI2"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ2"></td>
+    </tr>
+    <tr>
+      <th class="row-header">3</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="F3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="G3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="H3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="I3">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S3">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T3">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="U3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="V3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="W3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="X3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE3">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF3">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG3"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH3"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI3"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ3"></td>
+    </tr>
+    <tr>
+      <th class="row-header">4</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="F4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="G4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="H4">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T4">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U4">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="V4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="W4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="X4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE4">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF4">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG4"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH4"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI4"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ4"></td>
+    </tr>
+    <tr>
+      <th class="row-header">5</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="F5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="G5">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U5">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V5">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="W5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="X5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE5">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF5">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG5"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH5"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI5"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ5"></td>
+    </tr>
+    <tr>
+      <th class="row-header">6</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="F6">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V6">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W6">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="X6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE6">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF6">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG6"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH6"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI6"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ6"></td>
+    </tr>
+    <tr>
+      <th class="row-header">7</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E7">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W7">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X7">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE7">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF7">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG7"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH7"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI7"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ7"></td>
+    </tr>
+    <tr>
+      <th class="row-header">8</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="E8">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W8">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X8">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Y8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE8">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF8">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG8"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH8"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI8"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ8"></td>
+    </tr>
+    <tr>
+      <th class="row-header">9</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D9">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X9">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y9">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE9">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF9">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG9"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH9"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI9"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ9"></td>
+    </tr>
+    <tr>
+      <th class="row-header">10</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="D10">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X10">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y10">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE10">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF10">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG10"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH10"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI10"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ10"></td>
+    </tr>
+    <tr>
+      <th class="row-header">11</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C11">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S11">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="T11">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X11">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y11">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE11">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF11">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG11"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH11"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI11"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ11"></td>
+    </tr>
+    <tr>
+      <th class="row-header">12</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C12">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K12">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="L12">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S12">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="T12">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X12">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y12">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE12">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF12">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG12"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH12"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI12"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ12"></td>
+    </tr>
+    <tr>
+      <th class="row-header">13</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C13">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K13">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L13">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S13">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="T13">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="U13">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X13">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y13">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE13">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF13">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG13"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH13"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI13"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ13"></td>
+    </tr>
+    <tr>
+      <th class="row-header">14</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C14">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R14">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="S14">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X14">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y14">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE14">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF14">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG14"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH14"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI14"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ14"></td>
+    </tr>
+    <tr>
+      <th class="row-header">15</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C15">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I15">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="J15">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="K15">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="L15">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M15">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="N15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="O15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="P15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Q15">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R15">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="S15">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="T15">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="U15">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="V15">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X15">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y15">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE15">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF15">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG15"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH15"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI15"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ15"></td>
+    </tr>
+    <tr>
+      <th class="row-header">16</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C16">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D16">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="E16">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F16">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G16">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H16">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="I16">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J16">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K16">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L16">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M16">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N16">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O16">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P16">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q16">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R16">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="S16">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T16">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U16">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="V16">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W16">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X16">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y16">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE16">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF16">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG16"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH16"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI16"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ16"></td>
+    </tr>
+    <tr>
+      <th class="row-header">17</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C17">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D17">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="E17">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="F17">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G17">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="H17">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I17">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="J17">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K17">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L17">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="M17">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N17">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O17">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P17">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q17">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R17">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S17">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T17">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="U17">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V17">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W17">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X17">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y17">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE17">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF17">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG17"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH17"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI17"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ17"></td>
+    </tr>
+    <tr>
+      <th class="row-header">18</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C18">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D18">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="E18">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="F18">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G18">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="H18">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I18">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J18">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K18">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L18">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M18">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N18">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O18">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P18">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q18">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R18">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S18">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T18">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="U18">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="V18">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W18">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X18">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y18">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE18">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF18">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG18"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH18"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI18"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ18"></td>
+    </tr>
+    <tr>
+      <th class="row-header">19</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C19">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D19">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="E19">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="F19">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G19">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="H19">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="I19">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J19">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K19">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="L19">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M19">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N19">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O19">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P19">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q19">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R19">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S19">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T19">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="U19">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="V19">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W19">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X19">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y19">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE19">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF19">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG19"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH19"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI19"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ19"></td>
+    </tr>
+    <tr>
+      <th class="row-header">20</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C20">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D20">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E20">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="F20">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G20">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="H20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="I20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="J20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="K20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R20">S</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="S20">P</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="T20">P</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="U20">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="V20">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W20">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X20">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y20">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE20">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF20">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG20"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH20"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI20"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ20"></td>
+    </tr>
+    <tr>
+      <th class="row-header">21</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C21">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D21">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E21">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F21">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G21">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="H21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="I21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="J21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="K21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R21">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="S21">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="T21">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="U21">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="V21">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W21">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X21">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y21">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AB21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AC21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE21">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF21">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG21"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH21"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI21"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ21"></td>
+    </tr>
+    <tr>
+      <th class="row-header">22</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A22">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B22">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C22">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D22">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E22">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F22">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G22">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H22">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="I22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="J22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="K22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M22">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="N22">S2</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="O22">P</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="P22">P</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Q22">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="S22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="T22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="U22">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="V22">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W22">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X22">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y22">S</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z22">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA22">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AB22">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC22">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD22">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE22">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF22">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG22"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH22"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI22"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ22"></td>
+    </tr>
+    <tr>
+      <th class="row-header">23</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A23">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B23">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C23">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D23">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E23">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F23">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G23">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H23">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="I23">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="J23">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="K23">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L23">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M23">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="N23">S2</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="O23">P</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="P23">P</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Q23">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R23">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="S23">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="T23">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="U23">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V23">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W23">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X23">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y23">S</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z23">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AA23">W</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AB23">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC23">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD23">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE23">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF23">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG23"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH23"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI23"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ23"></td>
+    </tr>
+    <tr>
+      <th class="row-header">24</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A24">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B24">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C24">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I24">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="J24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="K24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N24">S</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="O24">P</td>
+      <td class="coord-cell color-P" data-code="P" data-coord="P24">P</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="S24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="T24">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W24">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X24">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y24">S</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z24">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AA24">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB24">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC24">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD24">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE24">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF24">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG24"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH24"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI24"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ24"></td>
+    </tr>
+    <tr>
+      <th class="row-header">25</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A25">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B25">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C25">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K25">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L25">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M25">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N25">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O25">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P25">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q25">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R25">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="S25">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W25">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X25">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y25">S</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="Z25">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AA25">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB25">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AC25">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD25">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE25">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF25">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG25"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH25"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI25"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ25"></td>
+    </tr>
+    <tr>
+      <th class="row-header">26</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A26">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B26">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C26">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K26">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="L26">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="M26">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N26">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O26">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P26">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q26">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="R26">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W26">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X26">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Y26">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Z26">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA26">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB26">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AC26">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD26">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE26">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF26">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG26"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH26"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI26"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ26"></td>
+    </tr>
+    <tr>
+      <th class="row-header">27</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A27">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B27">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C27">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J27">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="K27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="L27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="M27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="N27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="O27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="P27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Q27">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W27">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="X27">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Y27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Z27">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AA27">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AB27">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC27">S</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD27">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE27">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF27">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG27"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH27"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI27"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ27"></td>
+    </tr>
+    <tr>
+      <th class="row-header">28</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A28">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B28">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C28">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="D28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="E28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="F28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="G28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="H28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="I28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="J28">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="K28">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L28">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M28">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="N28">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="O28">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="P28">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Q28">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="S28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="T28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="U28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V28">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="W28">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="X28">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y28">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Z28">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AA28">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB28">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC28">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD28">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE28">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF28">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG28"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH28"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI28"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ28"></td>
+    </tr>
+    <tr>
+      <th class="row-header">29</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A29">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B29">W</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="C29">H</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J29">B</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="K29">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="L29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q29">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="R29">H</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T29">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U29">B</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="V29">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="W29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="X29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y29">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Z29">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA29">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB29">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AC29">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AD29">S</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE29">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF29">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG29"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH29"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI29"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ29"></td>
+    </tr>
+    <tr>
+      <th class="row-header">30</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A30">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B30">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L30">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="M30">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="N30">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="O30">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="P30">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Q30">S</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U30">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V30">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="W30">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="X30">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y30">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Z30">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA30">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AB30">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC30">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AD30">S</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE30">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF30">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG30"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH30"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI30"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ30"></td>
+    </tr>
+    <tr>
+      <th class="row-header">31</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A31">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="B31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q31">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="R31">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U31">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V31">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="W31">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="X31">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Y31">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Z31">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AA31">H</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB31">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC31">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD31">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE31">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF31">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG31"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH31"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI31"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ31"></td>
+    </tr>
+    <tr>
+      <th class="row-header">32</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A32">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="B32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M32">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="N32">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q32">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="R32">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U32">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V32">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="W32">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="X32">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Y32">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Z32">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA32">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB32">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC32">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD32">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE32">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF32">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG32"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH32"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI32"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ32"></td>
+    </tr>
+    <tr>
+      <th class="row-header">33</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A33">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="B33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N33">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="O33">O</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="P33">O</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="Q33">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V33">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="W33">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="X33">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y33">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Z33">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA33">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB33">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AC33">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD33">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE33">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF33">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG33"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH33"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI33"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ33"></td>
+    </tr>
+    <tr>
+      <th class="row-header">34</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A34">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="B34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N34">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="O34">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P34">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="Q34">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V34">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="W34">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="X34">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y34">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Z34">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA34">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB34">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AC34">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AD34">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE34">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF34">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG34"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH34"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI34"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ34"></td>
+    </tr>
+    <tr>
+      <th class="row-header">35</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A35">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B35">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M35">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="N35">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q35">B</td>
+      <td class="coord-cell color-O" data-code="O" data-coord="R35">O</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="W35">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="X35">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y35">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Z35">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA35">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB35">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AC35">S</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD35">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE35">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF35">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG35"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH35"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI35"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ35"></td>
+    </tr>
+    <tr>
+      <th class="row-header">36</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A36">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B36">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="E36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="F36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="G36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="H36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="W36">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="X36">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Y36">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Z36">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA36">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AB36">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AC36">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD36">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE36">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF36">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG36"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH36"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI36"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ36"></td>
+    </tr>
+    <tr>
+      <th class="row-header">37</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A37">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B37">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="C37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D37">B</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="E37">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="F37">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="G37">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="H37">S2</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V37">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="W37">B</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="X37">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Y37">H</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="Z37">H</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AA37">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AB37">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AC37">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AD37">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AE37">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF37">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG37"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH37"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI37"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ37"></td>
+    </tr>
+    <tr>
+      <th class="row-header">38</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A38">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B38">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C38">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D38">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="E38">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="F38">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="G38">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="H38">S2</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U38">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V38">B</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="W38">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="X38">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Y38">S2</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="Z38">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="AA38">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AB38">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AC38">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AD38">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AE38">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF38">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG38"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH38"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI38"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ38"></td>
+    </tr>
+    <tr>
+      <th class="row-header">39</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A39">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B39">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C39">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D39">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="E39">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="F39">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="G39">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="H39">S</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U39">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V39">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="W39">S</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="X39">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Y39">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Z39">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AA39">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AB39">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AC39">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AD39">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AE39">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF39">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG39"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH39"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI39"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ39"></td>
+    </tr>
+    <tr>
+      <th class="row-header">40</th>
+      <td class="coord-cell color-W" data-code="W" data-coord="A40">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="B40">W</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="C40">W</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="D40">B</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="E40">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="F40">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="G40">S</td>
+      <td class="coord-cell color-S" data-code="S" data-coord="H40">S</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="I40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="J40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="K40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="L40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="M40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="N40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="O40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="P40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="Q40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="R40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="S40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="T40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="U40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="V40">B</td>
+      <td class="coord-cell color-B" data-code="B" data-coord="W40">B</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="X40">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Y40">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="Z40">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AA40">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AB40">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AC40">S2</td>
+      <td class="coord-cell color-S2" data-code="S2" data-coord="AD40">S2</td>
+      <td class="coord-cell color-H" data-code="H" data-coord="AE40">H</td>
+      <td class="coord-cell color-W" data-code="W" data-coord="AF40">W</td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG40"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH40"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI40"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ40"></td>
+    </tr>
+    <tr>
+      <th class="row-header">41</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI41"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ41"></td>
+    </tr>
+    <tr>
+      <th class="row-header">42</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI42"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ42"></td>
+    </tr>
+    <tr>
+      <th class="row-header">43</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI43"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ43"></td>
+    </tr>
+    <tr>
+      <th class="row-header">44</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI44"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ44"></td>
+    </tr>
+    <tr>
+      <th class="row-header">45</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI45"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ45"></td>
+    </tr>
+    <tr>
+      <th class="row-header">46</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI46"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ46"></td>
+    </tr>
+    <tr>
+      <th class="row-header">47</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI47"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ47"></td>
+    </tr>
+    <tr>
+      <th class="row-header">48</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI48"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ48"></td>
+    </tr>
+    <tr>
+      <th class="row-header">49</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI49"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ49"></td>
+    </tr>
+    <tr>
+      <th class="row-header">50</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI50"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ50"></td>
+    </tr>
+    <tr>
+      <th class="row-header">51</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI51"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ51"></td>
+    </tr>
+    <tr>
+      <th class="row-header">52</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI52"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ52"></td>
+    </tr>
+    <tr>
+      <th class="row-header">53</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI53"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ53"></td>
+    </tr>
+    <tr>
+      <th class="row-header">54</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI54"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ54"></td>
+    </tr>
+    <tr>
+      <th class="row-header">55</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI55"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ55"></td>
+    </tr>
+    <tr>
+      <th class="row-header">56</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI56"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ56"></td>
+    </tr>
+    <tr>
+      <th class="row-header">57</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI57"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ57"></td>
+    </tr>
+    <tr>
+      <th class="row-header">58</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI58"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ58"></td>
+    </tr>
+    <tr>
+      <th class="row-header">59</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI59"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ59"></td>
+    </tr>
+    <tr>
+      <th class="row-header">60</th>
+      <td class="coord-cell color-empty" data-code="" data-coord="A60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="B60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="C60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="D60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="E60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="F60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="G60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="H60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="I60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="J60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="K60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="L60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="M60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="N60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="O60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="P60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Q60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="R60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="S60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="T60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="U60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="V60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="W60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="X60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Y60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="Z60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AA60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AB60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AC60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AD60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AE60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AF60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AG60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AH60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AI60"></td>
+      <td class="coord-cell color-empty" data-code="" data-coord="AJ60"></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h3>顏色總數統計</h3>
+<table class="counter-table">
+  <thead>
+    <tr>
+      <th>代碼</th>
+      <th>顏色</th>
+      <th>珠數</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>W</td>
+      <td><span class="counter-color-swatch" style="background:#ffffff;border:1px solid #ccc;"></span>白色</td>
+      <td id="count-W">380</td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td><span class="counter-color-swatch" style="background:#f6e2c8;"></span>膚色 1（亮）</td>
+      <td id="count-S">199</td>
+    </tr>
+    <tr>
+      <td>S2</td>
+      <td><span class="counter-color-swatch" style="background:#e3c19a;"></span>膚色 2（深）</td>
+      <td id="count-S2">68</td>
+    </tr>
+    <tr>
+      <td>H</td>
+      <td><span class="counter-color-swatch" style="background:#6b4a2e;"></span>深咖啡髮</td>
+      <td id="count-H">407</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td><span class="counter-color-swatch" style="background:#000000;"></span>黑色</td>
+      <td id="count-B">208</td>
+    </tr>
+    <tr>
+      <td>O</td>
+      <td><span class="counter-color-swatch" style="background:#f9a825;"></span>橘金色</td>
+      <td id="count-O">10</td>
+    </tr>
+    <tr>
+      <td>P</td>
+      <td><span class="counter-color-swatch" style="background:#f48fb1;"></span>粉色</td>
+      <td id="count-P">8</td>
+    </tr>
+    <tr>
+      <td>∑</td>
+      <td>總珠數</td>
+      <td id="count-total">1280</td>
+    </tr>
+  </tbody>
+</table>
+
+<script>
+(function(){
+  const cycle = ["","W","S","S2","H","B","O","P"];
+  const cls = {
+    "":"color-empty",
+    "W":"color-W",
+    "S":"color-S",
+    "S2":"color-S2",
+    "H":"color-H",
+    "B":"color-B",
+    "O":"color-O",
+    "P":"color-P"
+  };
+
+  function nextCode(c){
+    let i = cycle.indexOf(c);
+    return cycle[(i+1) % cycle.length];
+  }
+
+  function updateCounts(){
+    const counts = {W:0,S:0,S2:0,H:0,B:0,O:0,P:0};
+    document.querySelectorAll("td.coord-cell").forEach(td=>{
+      const code = td.dataset.code || "";
+      if(counts.hasOwnProperty(code)){
+        counts[code] += 1;
+      }
+    });
+    let total = 0;
+    for(const k in counts){
+      const el = document.getElementById("count-" + k);
+      if(el) el.textContent = counts[k];
+      total += counts[k];
+    }
+    document.getElementById("count-total").textContent = total;
+  }
+
+  function onClick(e){
+    const td = e.currentTarget;
+    const cur = td.dataset.code || "";
+    const nxt = nextCode(cur);
+    td.dataset.code = nxt;
+    td.className = "coord-cell " + (cls[nxt] || "color-empty");
+    td.textContent = nxt;
+    updateCounts();
+  }
+
+  document.querySelectorAll("td.coord-cell").forEach(td=>{
+    td.addEventListener("click", onClick);
+  });
+
+  updateCounts();
+})();
+</script>
+
+
+
+</body></html>
