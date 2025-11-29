@@ -1,0 +1,258 @@
+<!doctype html>\n<html lang="zh-Hant"><head>
+<meta charset="UTF-8">
+<title>技術文件（ChatGPT 風格）</title>
+
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background: #f5f5f5;
+    padding: 32px;
+    line-height: 1.7;
+    color: #1e1e1e;
+    font-weight: 400;        /* 預設一般粗細 */
+  }
+
+  .container {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 32px 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+
+  /* 標題才是粗體 */
+  h1 {
+    font-size: 2em;
+    margin-bottom: 16px;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    margin-top: 32px;
+    padding-left: 12px;
+    border-left: 4px solid #10a37f;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 1.2em;
+    margin-top: 24px;
+    font-weight: 600;
+  }
+
+  p, ul, ol {
+    margin: 12px 0;
+    font-size: 16px;
+    font-weight: 400;   /* 內容一律正常粗細 */
+  }
+
+  /* 「步驟：」這種小標可以用這個 class */
+  .sub-title {
+    font-weight: 500;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+
+  /* 步驟列表字稍微小一點 */
+  .steps {
+    margin-left: 20px;
+  }
+
+  .steps li {
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 4px;
+  }
+
+  .note {
+    background: #f0f0f0;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin: 20px 0;
+    border-left: 4px solid #10a37f;
+  }
+
+  pre {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9em;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+
+  th {
+    background: #f5f5f5;
+    font-weight: 700;
+  }
+</style>
+
+</head>
+
+<body>
+<div class="container">
+
+<h1 data-start="185" data-end="204">✅（1）結構分析 + 格子重建</h1><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<p data-start="205" data-end="228">我先從照片分析出整件作品的網格比例與串法結構。</p>
+<div class="no-scrollbar flex min-h-36 flex-nowrap gap-0.5 overflow-auto sm:gap-1 sm:overflow-hidden xl:min-h-44 mt-1 mb-5 [&amp;:not(:first-child)]:mt-4"><div class="border-token-border-default relative w-32 shrink-0 overflow-hidden rounded-xl border-[0.5px] md:shrink max-h-64 sm:w-[calc((100%-0.5rem)/3)] rounded-s-xl"><button class="relative overflow-hidden h-full w-full"><div><img alt="https://www.artbeads.com/product_images/uploaded_images/graphpaper-brick-cylinders.jpg" class="bg-token-main-surface-tertiary absolute inset-0 m-0 h-full w-full object-cover" src="https://www.artbeads.com/product_images/uploaded_images/graphpaper-brick-cylinders.jpg"></div></button></div><div class="border-token-border-default relative w-32 shrink-0 overflow-hidden rounded-xl border-[0.5px] md:shrink max-h-64 sm:w-[calc((100%-0.5rem)/3)] rounded-e-xl"><button class="relative overflow-hidden h-full w-full"><div><img alt="https://www.beadsjar.co.uk/image/data/Tutorial-Pictures/PeyoteStitchStep12.jpg" class="bg-token-main-surface-tertiary absolute inset-0 m-0 h-full w-full object-cover" src="https://www.beadsjar.co.uk/image/data/Tutorial-Pictures/PeyoteStitchStep12.jpg"></div></button></div></div>
+</div></div></div></div></div></div></article></h1><h3 data-start="272" data-end="287">📐 實際格子推定</h3><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<p data-start="288" data-end="296">依照片比例推算：</p>
+<ul data-start="298" data-end="408">
+<li data-start="298" data-end="312">
+<p data-start="300" data-end="312">寬：約 <strong data-start="304" data-end="312">34 珠</strong></p>
+</li>
+<li data-start="313" data-end="337">
+<p data-start="315" data-end="337">高：約 <strong data-start="319" data-end="327">50 珠</strong>（含上方弧形手指位）</p>
+</li>
+<li data-start="338" data-end="408">
+<p data-start="340" data-end="408">使用串法：<strong data-start="345" data-end="378">方形平編（Right Angle Weave / RAW）</strong> 之平面編法<br data-start="384" data-end="387">
+→ 優點：可以做出平整方格、容易做圖案</p>
+</li>
+</ul>
+<p data-start="410" data-end="452">為了讓你做起來更順手，我將重建成 <strong data-start="427" data-end="445">34×48 格（不含手指位）</strong> 的主要圖案。</p>
+<hr data-start="454" data-end="457">
+</div></div></div></div></div></div></article></h1><h1 data-start="459" data-end="471">✅（2）材料準備</h1><h3 data-start="472" data-end="483">🎨 顏色</h3><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+
+<ul data-start="484" data-end="541">
+<li data-start="484" data-end="505">
+<p data-start="486" data-end="505"><strong data-start="486" data-end="505">藍色珠：約 700–750 顆</strong></p>
+</li>
+<li data-start="506" data-end="541">
+<p data-start="508" data-end="541"><strong data-start="508" data-end="527">白色珠：約 500–550 顆</strong><br>
+（依實際珠子大小略有誤差）</p>
+</li>
+</ul>
+</div></div></div></div></div></div></article></h1><h3 data-start="543" data-end="554">🧵 工具</h3><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<ul data-start="555" data-end="587">
+<li data-start="555" data-end="572">
+<p data-start="557" data-end="572">尼龍線（0.25–0.3mm）</p>
+</li>
+<li data-start="573" data-end="582">
+<p data-start="575" data-end="582">串珠針（細針）</p>
+</li>
+<li data-start="583" data-end="587">
+<p data-start="585" data-end="587">剪刀</p>
+</li>
+</ul>
+<hr data-start="589" data-end="592">
+</div></div></div></div></div></div></article></h1><h1 data-start="594" data-end="611">✅（3）串法步驟（最重要）</h1><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<p data-start="612" data-end="675">以下是你可以直接開始做的 <strong data-start="625" data-end="633">逐排串法</strong>。<br data-start="634" data-end="637">
+採用的是 <strong data-start="642" data-end="655">方形平編（RAW）</strong> → 每排都是「一顆接一顆」、交錯穿插。</p>
+<hr data-start="677" data-end="680">
+</div></div></div></div></div></div></article></h1><h1 data-start="682" data-end="707">🟦 <strong data-start="687" data-end="707">🔰 第 0 排：起始排（底排）</strong></h1><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<p data-start="708" data-end="741">串 <strong data-start="710" data-end="721">34 顆藍色珠</strong> 形成底排。<br data-start="727" data-end="730">
+串法（RAW 起排）：</p>
+<ol data-start="743" data-end="826">
+<li data-start="743" data-end="786">
+<p data-start="746" data-end="786">取約 1.5 公尺線，穿 3 顆藍色 → 回穿第 1 顆 → 成第一個小方格</p>
+</li>
+<li data-start="787" data-end="811">
+<p data-start="790" data-end="811">再穿 2 顆藍色 → 回穿前一格的邊珠</p>
+</li>
+<li data-start="812" data-end="826">
+<p data-start="815" data-end="826">重複直到 34 顆完成</p>
+</li>
+</ol>
+<p data-start="828" data-end="840">—— 接著往上做下一排。</p>
+<hr data-start="842" data-end="845">
+</div></div></div></div></div></div></article></h1><h1 data-start="847" data-end="880">🟦 <strong data-start="852" data-end="878">🔰 第 1～48 排：圖案編織（逐排顏色）</strong></h1><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<p data-start="881" data-end="913">下方是「每排的配色」<br data-start="891" data-end="894">
+B=藍色、W=白色<br data-start="903" data-end="906">
+每排 34 珠</p>
+<p data-start="915" data-end="933">（這是依照片解析後重建出的可製作版）</p>
+<hr data-start="935" data-end="938">
+</div></div></div></div></div></div></article></h1><h2 data-start="940" data-end="962">⭐ 最上方皇冠區（第 40～48 排）</h2><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<pre class="overflow-visible!" data-start="963" data-end="1321"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-section">第48排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第47排: BBBBBBBBBBWWWWWWWWWWBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第46排: BBBBBBBBWWWBBBBBBBBWBBBWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第45排: BBBBBWWWBBBBBBBBBBBBBBBBWWWBBBBB</span></span><span>
+</span><span><span class="hljs-section">第44排: BBBBWWBBBBBBBBBBBBBBBBBBBBWWBBBB</span></span><span>
+</span><span><span class="hljs-section">第43排: BBBWBBBBBBBBBBBBBBBBBBBBBBBBWBBB</span></span><span>
+</span><span><span class="hljs-section">第42排: BBBWBBBBBBBBBBBBBBBBBBBBBBBBWBBB</span></span><span>
+</span><span><span class="hljs-section">第41排: BBBBWBBBBBBBBBBBBBBBBBBBBBWWBBBB</span></span><span>
+</span><span><span class="hljs-section">第40排: BBBBBWBBBBBBBBBBBBBBBBBBBWWBBBBB</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="1323" data-end="1326">
+</div></div></div></div></div></div></article></h1><h2 data-start="1328" data-end="1347">⭐ 臉部區（第 30～39 排）</h2><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<pre class="overflow-visible!" data-start="1348" data-end="1746"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-section">第39排: BBBWWWBBBBBWWWWWWBBBBBWWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第38排: BBWWBBBBWWWWBBBBWWWWBBBBWWBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第37排: BBWWBBBWWBBBBBBBBBBWWBBBWWBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第36排: BBWWBBBWWBBBBWWBBBBWWBBBWWBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第35排: BBWWBBBBWWBBBBBBBBWWBBBBWWBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第34排: BBBWWWBBBBWWBBWWBBWWBBBBWWWBBBBB</span></span><span>
+</span><span><span class="hljs-section">第33排: BBBBWWWBBBBWBBBBBBBWBBBBWWWBBBBB</span></span><span>
+</span><span><span class="hljs-section">第32排: BBBBBBWWWWWWBBBBBBWWWWWWBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第31排: BBBBBBBBBWWWBBBBBBBWWWBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第30排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="1748" data-end="1751">
+</div></div></div></div></div></div></article></h1><h2 data-start="1753" data-end="1775">⭐ 身體與頭髮區（第 10～29 排）</h2><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<pre class="overflow-visible!" data-start="1776" data-end="2563"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-section">第29排: BBBBBBWWBBBBBBBBBBBBBBWWBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第28排: BBBBWWWWBBBBBBBBBBBBWWWWBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第27排: BBBWWBBWWBBBBBBBBBBWWBBWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第26排: BBBWBBBBWBBBBBBBBBBWBBBBWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第25排: BBWWBBBBWWBBBBBBBWWBBBBWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第24排: BBBWWBBBBWWBBBBBBWWBBBBWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第23排: BBBBWWBBBBWWBBBBWWBBBBWWBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第22排: BBBBBWWBBBBWWBBWWBBWWBBBBWWBBBBB</span></span><span>
+</span><span><span class="hljs-section">第21排: BBBBBBWWBBBBWWWWWWWWBBBBWWBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第20排: BBBBBBBWWWWBBBBBBBBWWWWBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第19排: BBBBBBBBWWWWBBBBBBWWWWBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第18排: BBBBBBBBBWWWWBBBBWWWWBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第17排: BBBBBBBBBBWWWWWWWWWWBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第16排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第15排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第14排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第13排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第12排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第11排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第10排: BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="2565" data-end="2568">
+</div></div></div></div></div></div></article></h1><h2 data-start="2570" data-end="2589">⭐ 下方裙擺區（第 1～9 排）</h2><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<pre class="overflow-visible!" data-start="2590" data-end="2948"><div class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary"><div class="sticky top-9"><div class="absolute end-0 bottom-0 flex h-9 items-center pe-2"><div class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs"></div></div></div><div class="overflow-y-auto p-4" dir="ltr"><code class="whitespace-pre!"><span><span><span class="hljs-section">第9排:  BBBBBBWWBBBBBBBBBBBBBBWWBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第8排:  BBBBBWWWWBBBBBBBBBBBBWWWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第7排:  BBBBWWBBWWBBBBBBBBBBWWBBWWBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第6排:  BBBWBBBBWBBBBBBBBBBWBBBBWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第5排:  BBWWBBBBWWBBBBBBBWWBBBBWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第4排:  BBBWWBBBBWWBBBBBBWWBBBBWWBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第3排:  BBBBWWBBBBWWBBBBWWBBBBWWBBBBBBBB</span></span><span>
+</span><span><span class="hljs-section">第2排:  BBBBBWWBBBBWWBBWWBBWWBBBBWWBBBBB</span></span><span>
+</span><span><span class="hljs-section">第1排:  BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB</span></span><span>
+</span></span></code></div></div></pre>
+<hr data-start="2950" data-end="2953">
+</div></div></div></div></div></div></article></h1><h1 data-start="2955" data-end="2973">🔵 如何照排編織（最關鍵）</h1><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-16" data-testid="conversation-turn-4" data-scroll-anchor="false" data-turn="assistant"><div class="text-base my-auto mx-auto [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div data-message-author-role="assistant" data-message-id="60a8b7b8-3d8e-4e91-b6ef-ee5b1604c9bd" dir="auto" class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1" data-message-model-slug="gpt-5-1"><div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]"><div class="markdown prose dark:prose-invert w-full break-words light markdown-new-styling">
+<p data-start="2974" data-end="2987">每排都依照 RAW 方法：</p>
+<ol data-start="2989" data-end="3049">
+<li data-start="2989" data-end="3014">
+<p data-start="2992" data-end="3014"><strong data-start="2992" data-end="3012">第一顆珠與上一排對應的邊珠交叉穿</strong></p>
+</li>
+<li data-start="3015" data-end="3033">
+<p data-start="3018" data-end="3033">串第二顆，回穿上一排第二點</p>
+</li>
+<li data-start="3034" data-end="3049">
+<p data-start="3037" data-end="3049">完成一格一格的「小四方」</p>
+</li>
+</ol>
+<p data-start="3051" data-end="3068">每排照著上方 B/W 順序串即可。</p>
+<hr data-start="3070" data-end="3073">
+</div></div></div></div></div></div></article></h1><h1><article class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]" tabindex="-1" dir="auto" data-turn-id="request-WEB:d84099eb-0352-4acb-bea4-d83a46849174-17" data-testid="conversation-turn-6" data-scroll-anchor="true" data-turn="assistant"><div class="text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)"><div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn" tabindex="-1"><div class="flex max-w-full flex-col grow"><div class="flex flex-col"><div class="pb-2"><div class="relative w-full text-start"><div class="flex w-full flex-row items-start justify-between gap-4 text-start"><button disabled="" class="flex min-w-0 shrink-1 items-center gap-0.5"><span class="font-medium w-full"><span class="flex items-center gap-1 truncate text-start align-middle text-token-text-secondary dark:text-[var(--interactive-label-tertiary-default)]"><div class="truncate"><br></div></span></span></button></div></div></div><div class="pb-2"><div class="relative pb-2"><div class="relative"><div class="group/imagegen-image relative w-full overflow-hidden max-w-[400px] rounded-2xl" id="image-d78da9ad-d855-496c-88bb-fa933b6cae69" tabindex="0"><div class="relative z-0 cursor-pointer overflow-hidden max-w-[400px]" aria-label="已產生圖像"><div class="absolute inset-0 z-0 scale-110 overflow-hidden blur-2xl"><img alt="已產生圖像" class="absolute top-0 w-full" src="https://chatgpt.com/backend-api/estuary/content?id=file_00000000d6b87209a206a49f8c78311c&amp;ts=490117&amp;p=fs&amp;cid=1&amp;sig=90a1f822eb5edacea7ca2a08eac5ef5c5076db107984d063a83f2a38cfc550a6&amp;v=0"></div></div></div></div></div></div></div></div></div></div></article></h1>
+
+</div>
+
+
+</body></html>
